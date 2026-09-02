@@ -1,0 +1,136 @@
+{
+  "avgScores": {
+    "contextPrecision": 1.0,
+    "contextRecall": 0.9,
+    "faithfulness": 1.0,
+    "answerRelevancy": 1.0,
+    "answerCorrectness": 1.0
+  },
+  "results": [
+    {
+      "question": "What were the total NIKE, Inc. Revenues for fiscal 2025?",
+      "ground_truth": "NIKE, Inc. Revenues for fiscal 2025 were $46.3 billion.",
+      "generated_answer": "According to the provided document knowledge base, the total NIKE, Inc. Revenues for fiscal 2025 were $46.3 billion.",
+      "contextPrecision": { 
+        "score": 1.0, 
+        "reasoning": "The top-ranked context chunk directly contains the answer to the question." 
+      },
+      "contextRecall": {
+         "score": 1.0, 
+         "reasoning": "The provided contexts contain sufficient information to generate the ground truth." 
+      },
+      "faithfulness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer is directly supported by the contexts with no hallucinations." 
+      },
+      "answerRelevancy": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer directly answers the question without adding irrelevant fluff." 
+      },
+      "answerCorrectness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer factually matches the ground truth." 
+      }
+    },
+    {
+      "question": "Who is the current President and Chief Executive Officer of NIKE?",
+      "ground_truth": "Elliott Hill is the President and Chief Executive Officer of NIKE.",
+      "generated_answer": "According to the provided knowledge base, the current President and Chief Executive Officer of NIKE, Inc. is **Elliott Hill**. He has been serving in this role since October 2024.",
+      "contextPrecision": { 
+        "score": 1.0, 
+        "reasoning": "The correct answer is ranked at the very top." 
+      },
+      "contextRecall": { 
+        "score": 0.5, 
+        "reasoning": "The correct answer is only mentioned in one context chunk, and there is no mention of the previous CEO." 
+      },
+      "faithfulness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer is directly supported by the contexts." 
+      },
+      "answerRelevancy": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer directly answers the question without adding any irrelevant information." 
+      },
+      "answerCorrectness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer is factually correct." 
+      }
+    },
+    {
+      "question": "What were the total NIKE Direct revenues in fiscal 2025?",
+      "ground_truth": "NIKE Direct revenues were $18.8 billion in fiscal 2025.",
+      "generated_answer": "According to the provided knowledge base, in Document 1, **FISCAL 2025 FINANCIAL HIGHLIGHTS**, it is mentioned that:\n\n* NIKE Direct revenues declined 13% from $21.5 billion in fiscal 2024 to $18.8 billion in fiscal 2025.\n\nTherefore, the total NIKE Direct revenues in fiscal 2025 were $18.8 billion.",
+      "contextPrecision": { 
+        "score": 1.0, 
+        "reasoning": "The answer is ranked at the very top in the first context chunk." 
+      },
+      "contextRecall": { 
+        "score": 1.0, 
+        "reasoning": "The contexts contain sufficient information to generate the ground truth." 
+      },
+      "faithfulness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer is directly supported by the contexts." 
+      },
+      "answerRelevancy": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer directly answers the question without adding irrelevant fluff." 
+      },
+      "answerCorrectness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer factually matches the ground truth." 
+      }
+    },
+    {
+      "question": "Who is the sole owner of the Company's authorized redeemable preferred stock?",
+      "ground_truth": "Sojitz America is the sole owner of the Company's authorized redeemable preferred stock.",
+      "generated_answer": "According to Document 1, **Source:** NOTE 8 — REDEEMABLE PREFERRED STOCK **File:** Nike-Inc-2025_10K.pdf, Sojitz America is the sole owner of the Company's authorized redeemable preferred stock.",
+      "contextPrecision": { 
+        "score": 1.0, 
+        "reasoning": "The correct answer is ranked at the very top." 
+      },
+      "contextRecall": { 
+        "score": 1.0, 
+        "reasoning": "The contexts provided contain sufficient information to generate the ground truth." 
+      },
+      "faithfulness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer is directly supported by the contexts with no hallucinations." 
+      },
+      "answerRelevancy": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer directly answers the question." 
+      },
+      "answerCorrectness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer factually matches the ground truth." 
+      }
+    },
+    {
+      "question": "Under what trading symbol is NIKE's Class B Common Stock listed on the New York Stock Exchange?",
+      "ground_truth": "NIKE's Class B Common Stock trades under the symbol NKE.",
+      "generated_answer": "NIKE's Class B Common Stock is listed on the New York Stock Exchange under the trading symbol 'NKE'.",
+      "contextPrecision": { 
+        "score": 1.0, 
+        "reasoning": "The top-ranked context chunk directly answers the question." 
+      },
+      "contextRecall": { 
+        "score": 1.0, 
+        "reasoning": "The contexts contain sufficient information to generate the ground truth." 
+      },
+      "faithfulness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer is directly supported by the contexts." 
+      },
+      "answerRelevancy": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer directly answers the question." 
+      },
+      "answerCorrectness": { 
+        "score": 1.0, 
+        "reasoning": "The generated answer factually matches the ground truth." 
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "BugBaar RAG Engine",
+    "description": "API endpoints for the BugBaar Hybrid RAG Engine. Includes document ingestion, hybrid retrieval, and standard/streaming chat completions.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Ingest Document",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/rag/ingest",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rag",
+            "ingest"
+          ]
+        },
+        "description": "Uploads a PDF or TXT file to Cloudinary and queues it for asynchronous parsing, chunking, summarization, embedding, and indexing via BullMQ."
+      },
+      "response": []
+    },
+    {
+      "name": "2. Hybrid Retrieve Context",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"What were the total NIKE, Inc. Revenues for fiscal 2025?\",\n  \"limit\": 5,\n  \"includeProducts\": true,\n  \"includeDocuments\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/rag/retrieve",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rag",
+            "retrieve"
+          ]
+        },
+        "description": "Executes parallel vector ($vectorSearch) and text ($search) queries on MongoDB Atlas, merges them using Reciprocal Rank Fusion (RRF), and optionally reranks with Cohere. Bypasses the LLM generator entirely."
+      },
+      "response": []
+    },
+    {
+      "name": "3. RAG Chat Completion",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Summarize Nike's revenue strategy for 2025.\"\n    }\n  ],\n  \"threadId\": \"postman_thread_01\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/rag/chat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rag",
+            "chat"
+          ]
+        },
+        "description": "Full end-to-end RAG pipeline: Security Sandboxing -> Embedding -> Retrieval -> RRF -> Reranking -> LLM Generation. Returns a standard JSON response."
+      },
+      "response": []
+    },
+    {
+      "name": "4. RAG Chat Streaming (SSE)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Summarize Nike's revenue strategy for 2025.\"\n    }\n  ],\n  \"threadId\": \"postman_thread_02\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/rag/chat/stream",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rag",
+            "chat",
+            "stream"
+          ]
+        },
+        "description": "Full RAG pipeline returning Server-Sent Events (SSE) token stream for real-time UI rendering."
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3001",
+      "type": "string"
+    }
+  ]
+}
