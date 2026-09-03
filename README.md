@@ -267,3 +267,6 @@ rag/
 To ensure true production-level reliability, the system implements robust, multi-layered resilience strategies:
 - **Graceful Fallbacks:** The ingestion pipeline relies heavily on the `createFallback` method within summarization providers. If an LLM returns an empty summary or fails to process a complex table chunk, the system gracefully falls back to structured raw text mapping rather than failing the job.
 - **API Rate Limiting (429/503) Handling:** The NVIDIA client uses an advanced custom `retry-handler` that inspects HTTP headers. It automatically catches `429 Rate Limit` and `503 Service Unavailable` errors, parsing the `Retry-After` header to securely throttle requests with exponential backoff, preventing catastrophic failures during peak loads.
+
+## 🤝 Contributing
+- **Note:** This repository is currently released as a reference architecture. While I am not accepting Pull Requests at this time, please feel free to fork the repository, explore the code, and adapt it for your own use cases!
