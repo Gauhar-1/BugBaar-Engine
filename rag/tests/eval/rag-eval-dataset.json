@@ -1,22 +1,22 @@
 [
   {
-    "question": "What were Adidas AG's total revenues in fiscal 2025 according to the document?",
-    "ground_truth": "The provided document contains no information about Adidas AG's revenues. It only covers NIKE, Inc."
+    "question": "What were the total NIKE, Inc. Revenues for fiscal 2025?",
+    "ground_truth": "NIKE, Inc. Revenues for fiscal 2025 were $46.3 billion."
   },
   {
-    "question": "Why did NIKE's total revenues increase by 20% in fiscal 2025?",
-    "ground_truth": "NIKE's total revenues did not increase by 20%; they declined from the prior year to $46.3 billion."
+    "question": "Who is the current President and Chief Executive Officer of NIKE, Inc.?",
+    "ground_truth": "Elliott Hill is the President and Chief Executive Officer of NIKE."
   },
   {
-    "question": "How did NIKE Direct revenues compare between fiscal 2024 and fiscal 2025?",
-    "ground_truth": "NIKE Direct revenues declined 13% from $21.5 billion in fiscal 2024 to $18.8 billion in fiscal 2025."
+    "question": "How did NIKE's gross margin percentage change from fiscal 2024 to fiscal 2025?",
+    "ground_truth": "Gross margin decreased 190 basis points from 44.6% in fiscal 2024 to 42.7% in fiscal 2025."
   },
   {
-    "question": "What inventory valuation method does NIKE primarily use for its inventories?",
+    "question": "What is NIKE's primary method for valuing its inventories?",
     "ground_truth": "Inventories are valued at the lower of cost or net realizable value, substantially determined on a first-in, first-out (FIFO) basis."
   },
   {
-    "question": "What are two key risks NIKE identifies regarding foreign currency fluctuations and international trade?",
-    "ground_truth": "NIKE identifies risks including unfavorable changes in foreign currency exchange rates affecting net revenues, and geopolitical instability, tariffs, or trade protection measures affecting global operations."
+    "question": "According to the document, what were Puma's total sales in North America during fiscal 2025?",
+    "ground_truth": "The provided document does not contain information about Puma's sales. It only covers NIKE, Inc."
   }
 ]
